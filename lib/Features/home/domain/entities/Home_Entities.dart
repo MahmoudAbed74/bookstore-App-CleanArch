@@ -1,11 +1,18 @@
 class HomeEntities {
-  final String imageUri;
+  final String bookId;
+  final String? imageUri;
   final String title;
-  final String autorTitle;
-  final String price;
-  final num rating;
-  final num views;
+  final String? autorTitle;
+  final String? price;
+  final num? rating;
+  final num? views;
 
-  HomeEntities(this.imageUri, this.title, this.autorTitle, this.price,
-      this.rating, this.views);
+  HomeEntities(
+      {required this.bookId,
+      required this.imageUri,
+      required this.title,
+      required this.autorTitle,
+      required this.price,
+      required this.rating,
+      required this.views});
 }
