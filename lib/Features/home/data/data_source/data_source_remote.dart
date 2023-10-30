@@ -32,8 +32,12 @@ class DataSourceRemoteImplm extends DataSourceRemote {
   }
 
   @override
-  Future<List<HomeEntities>> fetchNewsetBooks() {
-    // TODO: implement fetchNewsetBooks
-    throw UnimplementedError();
+  Future<List<HomeEntities>> fetchNewsetBooks() async {
+    var data = await apiservice.get(
+        endPoint:
+            "v1/volumes?Filtering=free-ebooks&q=subject: food&Sorting=newest ");
+    List<BookModel> books = getBooksList(data);
+
+    return books;
   }
 }
